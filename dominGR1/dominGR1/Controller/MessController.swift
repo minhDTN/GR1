@@ -7,6 +7,10 @@
 
 import UIKit
 class MessController: UITableViewController {
+    //MARK: Properties
+    //MARK: Helpers
+    //MARK: Actions
+    //MARK: Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
         

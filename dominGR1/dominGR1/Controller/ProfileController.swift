@@ -6,13 +6,18 @@
 //
 
 import UIKit
-
+import Firebase
 private let cellIdentifier = "ProfileCell"
 private let headerIdentifier = "ProfileHeader"
 
+protocol ProfileControllerDelegate: AnyObject {
+    func updateProfileTab(user: User)
+}
 class ProfileController: UICollectionViewController {
     //MARK: - Properties
     private var user: User
+    private var posts = [Post]()
+    weak var delegate: ProfileControllerDelegate?
     //MARK: - Lifecycles
     init(user: User){
         self.user = user
@@ -24,9 +29,11 @@ class ProfileController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.delegate = self.tabBarController as? MainTabController
         configureUI()
         fetchUserStats()
         checkIfUserIsFollowed()
+        fetchPosts()
     }
     //MARK: - API
     func checkIfUserIsFollowed() {
@@ -38,6 +45,12 @@ class ProfileController: UICollectionViewController {
     func fetchUserStats() {
         UserService.fetchUserStats(uid: user.uid) { stats in
             self.user.stats = stats
+            self.collectionView.reloadData()
+        }
+    }
+    func fetchPosts() {
+        PostService.fetchPosts(forUser: user.uid) { posts in
+            self.posts = posts
             self.collectionView.reloadData()
         }
     }
@@ -55,10 +68,11 @@ class ProfileController: UICollectionViewController {
 //MARK: - UICollectionViewDataSource
 extension ProfileController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return posts.count
     }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! ProfileCell
+        cell.postViewModel = PostViewModel(post: posts[indexPath.row])
         return cell
     }
     
@@ -96,17 +110,23 @@ extension ProfileController: UICollectionViewDelegateFlowLayout {
 extension ProfileController: ProfileHeaderDelegate {
     func header(_ profileHeader: ProfileHeader, didTapActionButtonFor user: User) {
         if user.isCurrentUser {
-
+            self.fetchUserStats()
         } else if user.isFollowed {
             UserService.unfollow(uid: user.uid) { error in
                 self.user.isFollowed = false
                 self.fetchUserStats()
+                UserService.fetchUser { currentUser in
+                        self.delegate?.updateProfileTab(user: currentUser)
+                }
                 //self.collectionView.reloadData()
             }
         } else {
             UserService.follow(uid: user.uid) { error in
                 self.user.isFollowed = true
                 self.fetchUserStats()
+                UserService.fetchUser { currentUser in
+                        self.delegate?.updateProfileTab(user: currentUser)
+                }
                 //self.collectionView.reloadData()
             }
         }

@@ -20,26 +20,26 @@ class RegistrationController: UIViewController {
         return btn
     }()
     private let emailTextField: UITextField = {
-        let tf = CustomTextField(placeholder: "Email")
+        let tf = CustomTextFieldAuthentication(placeholder: "Email")
         return tf
     }()
     
     private let passwordTextField: UITextField = {
-        let tf = CustomTextField(placeholder: "Password")
+        let tf = CustomTextFieldAuthentication(placeholder: "Password")
         tf.isSecureTextEntry = true
         return tf
     }()
     private let fullNameTextField: UITextField = {
-        let tf = CustomTextField(placeholder: "Fullname")
+        let tf = CustomTextFieldAuthentication(placeholder: "Fullname")
         return tf
     }()
     
     private let userNameTextField: UITextField = {
-        let tf = CustomTextField(placeholder: "Username")
+        let tf = CustomTextFieldAuthentication(placeholder: "Username")
         return tf
     }()
     private let jobTitleTextField: UITextField = {
-        let tf = CustomTextField(placeholder: "Job")
+        let tf = CustomTextFieldAuthentication(placeholder: "Job")
         return tf
     }()
     private lazy var signUpButton: UIButton = {

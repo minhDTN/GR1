@@ -6,20 +6,27 @@
 //
 
 import UIKit
+protocol DidTapUserNameOnFeedDelegate: AnyObject {
+    func didTapUserNameOnFeed(user: User)
+}
 class FeedCell: UICollectionViewCell {
     // MARK: Properties
+    weak var delegate: DidTapUserNameOnFeedDelegate?
+    var postViewModel: PostViewModel? {
+        didSet {
+            updateViewModel()
+        }
+    }
     private var profileImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.isUserInteractionEnabled = true
-        iv.image = UIImage(named: "venom-7")
         return iv
     }()
     private lazy var usernameButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitleColor(.black, for: .normal)
-        button.setTitle("venom", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 13)
         button.addTarget(self, action: #selector(didTapUserName), for: .touchUpInside)
         return button
@@ -29,7 +36,6 @@ class FeedCell: UICollectionViewCell {
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.isUserInteractionEnabled = true
-        iv.image = UIImage(named: "venom-7")
         return iv
     }()
     private lazy var likeButton: UIButton = {
@@ -52,19 +58,16 @@ class FeedCell: UICollectionViewCell {
     }()
     private let likesLabel: UILabel = {
         let label = UILabel()
-        label.text = "1 like"
         label.font = UIFont.boldSystemFont(ofSize: 13)
         return label
     }()
     private let captionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Something here ... Batman"
         label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     private let postTimeLabel: UILabel = {
         let label = UILabel()
-        label.text = "2 days ago"
         label.font = UIFont.boldSystemFont(ofSize: 12)
         label.textColor = .lightGray
         return label
@@ -104,7 +107,10 @@ class FeedCell: UICollectionViewCell {
     }
     // MARK: Actions
     @objc func didTapUserName(){
-        print("did tap user name")
+        guard let viewModel = postViewModel else { return }
+        UserService.getUser(uid: viewModel.userID) {  user in
+            self.delegate?.didTapUserNameOnFeed(user: user)
+        }
     }
     // MARK: Helpers
     func configureActionButtons(){
@@ -113,5 +119,16 @@ class FeedCell: UICollectionViewCell {
         stackView.distribution = .fillEqually
         addSubview(stackView)
         stackView.anchor(top: postImageView.bottomAnchor, width: 120, height: 50)
+    }
+    func updateViewModel() {
+        guard let viewModel = postViewModel else { return }
+        UserService.getUser(uid: viewModel.userID) {  user in
+            self.profileImageView.sd_setImage(with: URL(string: user.profileImage))
+            self.usernameButton.setTitle(user.username, for: .normal)
+        }
+        postTimeLabel.text = viewModel.createdAt
+        likesLabel.text = viewModel.likesLabelText
+        captionLabel.text = viewModel.caption
+        postImageView.sd_setImage(with: viewModel.imageURL)
     }
 }

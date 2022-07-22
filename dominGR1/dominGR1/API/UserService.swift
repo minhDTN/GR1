@@ -10,9 +10,16 @@ import CoreMedia
 typealias FirestoreCompletion = (Error?) -> Void
 struct UserService {
     
+    static func getUser(uid: String, completion: @escaping(User) -> Void) {
+        COLLECTION_USER.document(uid).getDocument { snapshot, error in
+            guard let dictionary = snapshot?.data() else { return }
+            let user = User(dictionary: dictionary)
+            completion(user)
+        }
+    }
     static func fetchUser(completion: @escaping(User) -> Void) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        Firestore.firestore().collection("users").document(uid).getDocument { snapshot, error in
+        COLLECTION_USER.document(uid).getDocument { snapshot, error in
             guard let dictionary = snapshot?.data() else { return }
             let user = User(dictionary: dictionary)
             completion(user)
@@ -49,7 +56,10 @@ struct UserService {
             let followers = snapshot?.documents.count ?? 0
             COLLECTION_FOLLOWING.document(uid).collection("user-following").getDocuments { snapshot, _ in
                 let following = snapshot?.documents.count ?? 0
-                completion(UserStats(followers: followers, following: following))
+                COLLECTION_POST.whereField("userID", isEqualTo: uid).getDocuments { snapshot, error in
+                    let posts = snapshot?.documents.count ?? 0
+                    completion(UserStats(followers: followers, following: following, posts: posts))
+                }
             }
         }
     }

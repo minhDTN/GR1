@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-protocol ProfileHeaderDelegate: class {
+protocol ProfileHeaderDelegate: AnyObject {
     func header(_ profileHeader: ProfileHeader, didTapActionButtonFor user: User)
 }
 class ProfileHeader: UICollectionReusableView {
@@ -34,7 +34,7 @@ class ProfileHeader: UICollectionReusableView {
     }()
     private lazy var editProfileFollowButton: UIButton = {
         let btn = UIButton(type: .system)
-        btn.setTitle("Loading", for: .normal)
+        btn.setTitle(" ", for: .normal)
         btn.layer.cornerRadius = 3
         btn.layer.borderColor = UIColor.lightGray.cgColor
         btn.layer.borderWidth = 0.5

@@ -10,11 +10,15 @@ import UIKit
 class ProfileCell: UICollectionViewCell {
     
     //MARK: - Properties
+    var postViewModel: PostViewModel? {
+        didSet {
+            updateViewModel()
+        }
+    }
     private let postImage: UIImageView = {
         let iv = UIImageView()
         iv.clipsToBounds = true
         iv.contentMode = .scaleAspectFill
-        iv.image = UIImage(named: "venom-7")
         return iv
     }()
     //MARK: - Lifecycles
@@ -32,5 +36,9 @@ class ProfileCell: UICollectionViewCell {
         backgroundColor = .white
         addSubview(postImage)
         postImage.fillSuperview()
+    }
+    func updateViewModel() {
+        guard let viewModel = postViewModel else { return }
+        postImage.sd_setImage(with: viewModel.imageURL)
     }
 }

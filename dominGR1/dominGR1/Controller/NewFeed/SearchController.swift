@@ -42,6 +42,8 @@ class SearchController: UITableViewController {
         let backButton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         backButton.setBackButtonTitlePositionAdjustment(UIOffset(horizontal: -1000, vertical: -1000), for: .default)
         navigationItem.backBarButtonItem = backButton
+//        let emptyImage = UIImage(named: "back")
+//        searchController.searchBar.setImage(emptyImage, for: .search, state: .normal)
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.hidesNavigationBarDuringPresentation = true

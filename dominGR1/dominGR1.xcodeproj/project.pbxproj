@@ -16,6 +16,19 @@
 		FA17E6192861C6A700E6E147 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA17E6182861C6A700E6E147 /* SearchController.swift */; };
 		FA17E61B2861C70400E6E147 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA17E61A2861C70400E6E147 /* UserCell.swift */; };
 		FA17E61D2861C79E00E6E147 /* UserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA17E61C2861C79E00E6E147 /* UserCellViewModel.swift */; };
+		FA2013892881C72700D01756 /* ProjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2013882881C72700D01756 /* ProjectController.swift */; };
+		FA21FA822886A94A005591D4 /* TaskListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA21FA812886A94A005591D4 /* TaskListController.swift */; };
+		FA21FA842886AE26005591D4 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA21FA832886AE26005591D4 /* TaskCell.swift */; };
+		FA21FA862886AE35005591D4 /* TaskUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA21FA852886AE35005591D4 /* TaskUIView.swift */; };
+		FA21FA882886AF83005591D4 /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA21FA872886AF83005591D4 /* TaskController.swift */; };
+		FA21FA8A2886AF8D005591D4 /* AddTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA21FA892886AF8D005591D4 /* AddTaskController.swift */; };
+		FA21FA8C2886B683005591D4 /* TaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA21FA8B2886B683005591D4 /* TaskService.swift */; };
+		FA21FA8E2886B6E8005591D4 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA21FA8D2886B6E8005591D4 /* TaskViewModel.swift */; };
+		FA21FA902886B974005591D4 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA21FA8F2886B974005591D4 /* Task.swift */; };
+		FA21FA94288708F5005591D4 /* AddMemberProjectSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA21FA93288708F5005591D4 /* AddMemberProjectSearchController.swift */; };
+		FA36C206287D622E00FEF5A4 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36C205287D622E00FEF5A4 /* UIButtonExtension.swift */; };
+		FA36C209287D627900FEF5A4 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36C208287D627900FEF5A4 /* UIViewControllerExtension.swift */; };
+		FA36C20B287D630700FEF5A4 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36C20A287D630700FEF5A4 /* CustomTextView.swift */; };
 		FA3B10F92857929100324C01 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B10F82857929100324C01 /* MainTabController.swift */; };
 		FA3B10FB2857929D00324C01 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B10FA2857929D00324C01 /* FeedController.swift */; };
 		FA3B10FD285792A700324C01 /* MessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B10FC285792A700324C01 /* MessController.swift */; };
@@ -25,19 +38,32 @@
 		FA3B1105285798D200324C01 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA3B1104285798D200324C01 /* GoogleService-Info.plist */; };
 		FA3B110728588A1A00324C01 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B110628588A1A00324C01 /* User.swift */; };
 		FA3B110928588C4600324C01 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B110828588C4600324C01 /* AuthenticationViewModel.swift */; };
-		FA3B110C28588D4A00324C01 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B110B28588D4A00324C01 /* Extensions.swift */; };
+		FA3B110C28588D4A00324C01 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B110B28588D4A00324C01 /* UIViewExtension.swift */; };
 		FA3B110E28588DFA00324C01 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B110D28588DFA00324C01 /* CustomButton.swift */; };
 		FA3B111028588E0E00324C01 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B110F28588E0E00324C01 /* CustomTextField.swift */; };
 		FA3B111228588E9600324C01 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B111128588E9600324C01 /* AuthService.swift */; };
 		FA3B11142858919700324C01 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B11132858919700324C01 /* RegistrationController.swift */; };
 		FA3B11162858920700324C01 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B11152858920700324C01 /* ImageUploader.swift */; };
 		FA3B111A285896B800324C01 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B1119285896B800324C01 /* UserService.swift */; };
+		FA492483286B58E400B67E9D /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA492482286B58E400B67E9D /* PostController.swift */; };
+		FA58CC30288720830064205A /* AssignTaskSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA58CC2F288720830064205A /* AssignTaskSearchController.swift */; };
+		FAB02492288010E4001EF0ED /* WorkplaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB02491288010E4001EF0ED /* WorkplaceCell.swift */; };
+		FAB024952880563C001EF0ED /* WorkplaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB024942880563C001EF0ED /* WorkplaceService.swift */; };
+		FAB0249A28805914001EF0ED /* AddProjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0249928805914001EF0ED /* AddProjectController.swift */; };
+		FAB0249C28805C56001EF0ED /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0249B28805C56001EF0ED /* ProjectViewModel.swift */; };
+		FAB0249E2880719F001EF0ED /* ProjectUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0249D2880719F001EF0ED /* ProjectUIView.swift */; };
+		FAB024A02880836D001EF0ED /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0249F2880836D001EF0ED /* Project.swift */; };
+		FAB024A228808727001EF0ED /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB024A128808727001EF0ED /* StringExtensions.swift */; };
 		FAD4DC07284F4BD500383C7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD4DC06284F4BD500383C7A /* AppDelegate.swift */; };
 		FAD4DC09284F4BD500383C7A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD4DC08284F4BD500383C7A /* SceneDelegate.swift */; };
 		FAD4DC0B284F4BD500383C7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD4DC0A284F4BD500383C7A /* ViewController.swift */; };
 		FAD4DC0E284F4BD500383C7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD4DC0C284F4BD500383C7A /* Main.storyboard */; };
 		FAD4DC10284F4BD600383C7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD4DC0F284F4BD600383C7A /* Assets.xcassets */; };
 		FAD4DC13284F4BD600383C7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD4DC11284F4BD600383C7A /* LaunchScreen.storyboard */; };
+		FADB9AD5287DB72400F6C7E3 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB9AD4287DB72400F6C7E3 /* PostService.swift */; };
+		FADB9AD7287DDD7D00F6C7E3 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB9AD6287DDD7D00F6C7E3 /* Post.swift */; };
+		FADB9AD9287DE41B00F6C7E3 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB9AD8287DE41B00F6C7E3 /* PostViewModel.swift */; };
+		FAED684A28887E640036E4AE /* AttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAED684928887E640036E4AE /* AttributedStringExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +78,19 @@
 		FA17E6182861C6A700E6E147 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		FA17E61A2861C70400E6E147 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		FA17E61C2861C79E00E6E147 /* UserCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViewModel.swift; sourceTree = "<group>"; };
+		FA2013882881C72700D01756 /* ProjectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectController.swift; sourceTree = "<group>"; };
+		FA21FA812886A94A005591D4 /* TaskListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListController.swift; sourceTree = "<group>"; };
+		FA21FA832886AE26005591D4 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		FA21FA852886AE35005591D4 /* TaskUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskUIView.swift; sourceTree = "<group>"; };
+		FA21FA872886AF83005591D4 /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
+		FA21FA892886AF8D005591D4 /* AddTaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskController.swift; sourceTree = "<group>"; };
+		FA21FA8B2886B683005591D4 /* TaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskService.swift; sourceTree = "<group>"; };
+		FA21FA8D2886B6E8005591D4 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		FA21FA8F2886B974005591D4 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		FA21FA93288708F5005591D4 /* AddMemberProjectSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberProjectSearchController.swift; sourceTree = "<group>"; };
+		FA36C205287D622E00FEF5A4 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		FA36C208287D627900FEF5A4 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		FA36C20A287D630700FEF5A4 /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		FA3B10F82857929100324C01 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		FA3B10FA2857929D00324C01 /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
 		FA3B10FC285792A700324C01 /* MessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessController.swift; sourceTree = "<group>"; };
@@ -61,13 +100,22 @@
 		FA3B1104285798D200324C01 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		FA3B110628588A1A00324C01 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FA3B110828588C4600324C01 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
-		FA3B110B28588D4A00324C01 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FA3B110B28588D4A00324C01 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		FA3B110D28588DFA00324C01 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		FA3B110F28588E0E00324C01 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		FA3B111128588E9600324C01 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		FA3B11132858919700324C01 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		FA3B11152858920700324C01 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		FA3B1119285896B800324C01 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		FA492482286B58E400B67E9D /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
+		FA58CC2F288720830064205A /* AssignTaskSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignTaskSearchController.swift; sourceTree = "<group>"; };
+		FAB02491288010E4001EF0ED /* WorkplaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkplaceCell.swift; sourceTree = "<group>"; };
+		FAB024942880563C001EF0ED /* WorkplaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkplaceService.swift; sourceTree = "<group>"; };
+		FAB0249928805914001EF0ED /* AddProjectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProjectController.swift; sourceTree = "<group>"; };
+		FAB0249B28805C56001EF0ED /* ProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewModel.swift; sourceTree = "<group>"; };
+		FAB0249D2880719F001EF0ED /* ProjectUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectUIView.swift; sourceTree = "<group>"; };
+		FAB0249F2880836D001EF0ED /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		FAB024A128808727001EF0ED /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		FAD4DC03284F4BD500383C7A /* dominGR1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dominGR1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD4DC06284F4BD500383C7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAD4DC08284F4BD500383C7A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +124,10 @@
 		FAD4DC0F284F4BD600383C7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAD4DC12284F4BD600383C7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAD4DC14284F4BD600383C7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FADB9AD4287DB72400F6C7E3 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		FADB9AD6287DDD7D00F6C7E3 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		FADB9AD8287DE41B00F6C7E3 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		FAED684928887E640036E4AE /* AttributedStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedStringExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,12 +159,27 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		FA36C204287D621600FEF5A4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA3B110B28588D4A00324C01 /* UIViewExtension.swift */,
+				FA36C205287D622E00FEF5A4 /* UIButtonExtension.swift */,
+				FA36C208287D627900FEF5A4 /* UIViewControllerExtension.swift */,
+				FAB024A128808727001EF0ED /* StringExtensions.swift */,
+				FAED684928887E640036E4AE /* AttributedStringExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		FA3B10F2285791E000324C01 /* API */ = {
 			isa = PBXGroup;
 			children = (
 				FA3B111128588E9600324C01 /* AuthService.swift */,
 				FA3B11152858920700324C01 /* ImageUploader.swift */,
 				FA3B1119285896B800324C01 /* UserService.swift */,
+				FADB9AD4287DB72400F6C7E3 /* PostService.swift */,
+				FAB024942880563C001EF0ED /* WorkplaceService.swift */,
+				FA21FA8B2886B683005591D4 /* TaskService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -121,6 +188,9 @@
 			isa = PBXGroup;
 			children = (
 				FA3B110628588A1A00324C01 /* User.swift */,
+				FADB9AD6287DDD7D00F6C7E3 /* Post.swift */,
+				FAB0249F2880836D001EF0ED /* Project.swift */,
+				FA21FA8F2886B974005591D4 /* Task.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -128,12 +198,17 @@
 		FA3B10F5285791F100324C01 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FA36C20A287D630700FEF5A4 /* CustomTextView.swift */,
 				FA3B110D28588DFA00324C01 /* CustomButton.swift */,
 				FA3B110F28588E0E00324C01 /* CustomTextField.swift */,
 				FA17E60C2861AEA000E6E147 /* FeedCell.swift */,
 				FA17E60E2861B98900E6E147 /* ProfileCell.swift */,
 				FA17E6102861B99600E6E147 /* ProfileHeader.swift */,
 				FA17E61A2861C70400E6E147 /* UserCell.swift */,
+				FAB02491288010E4001EF0ED /* WorkplaceCell.swift */,
+				FAB0249D2880719F001EF0ED /* ProjectUIView.swift */,
+				FA21FA832886AE26005591D4 /* TaskCell.swift */,
+				FA21FA852886AE35005591D4 /* TaskUIView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -144,6 +219,9 @@
 				FA3B110828588C4600324C01 /* AuthenticationViewModel.swift */,
 				FA17E6122861BAA900E6E147 /* ProfileHeaderViewModel.swift */,
 				FA17E61C2861C79E00E6E147 /* UserCellViewModel.swift */,
+				FADB9AD8287DE41B00F6C7E3 /* PostViewModel.swift */,
+				FAB0249B28805C56001EF0ED /* ProjectViewModel.swift */,
+				FA21FA8D2886B6E8005591D4 /* TaskViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -151,14 +229,12 @@
 		FA3B10F7285791F800324C01 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FAB02498288058EA001EF0ED /* Workplace */,
+				FAB02497288058CE001EF0ED /* Authentication */,
+				FAB02496288058A1001EF0ED /* NewFeed */,
 				FA3B10F82857929100324C01 /* MainTabController.swift */,
-				FA3B10FA2857929D00324C01 /* FeedController.swift */,
 				FA3B10FC285792A700324C01 /* MessController.swift */,
 				FA3B10FE285792B700324C01 /* ProfileController.swift */,
-				FA3B1100285792F500324C01 /* WorkplaceController.swift */,
-				FA3B11022857930100324C01 /* LoginController.swift */,
-				FA3B11132858919700324C01 /* RegistrationController.swift */,
-				FA17E6182861C6A700E6E147 /* SearchController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -166,10 +242,44 @@
 		FA3B110A28588CFD00324C01 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				FA3B110B28588D4A00324C01 /* Extensions.swift */,
+				FA36C204287D621600FEF5A4 /* Extensions */,
 				FA17E6142861BCE900E6E147 /* Constants.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		FAB02496288058A1001EF0ED /* NewFeed */ = {
+			isa = PBXGroup;
+			children = (
+				FA17E6182861C6A700E6E147 /* SearchController.swift */,
+				FA3B10FA2857929D00324C01 /* FeedController.swift */,
+				FA492482286B58E400B67E9D /* PostController.swift */,
+			);
+			path = NewFeed;
+			sourceTree = "<group>";
+		};
+		FAB02497288058CE001EF0ED /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				FA3B11022857930100324C01 /* LoginController.swift */,
+				FA3B11132858919700324C01 /* RegistrationController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		FAB02498288058EA001EF0ED /* Workplace */ = {
+			isa = PBXGroup;
+			children = (
+				FA3B1100285792F500324C01 /* WorkplaceController.swift */,
+				FAB0249928805914001EF0ED /* AddProjectController.swift */,
+				FA2013882881C72700D01756 /* ProjectController.swift */,
+				FA21FA812886A94A005591D4 /* TaskListController.swift */,
+				FA21FA872886AF83005591D4 /* TaskController.swift */,
+				FA21FA892886AF8D005591D4 /* AddTaskController.swift */,
+				FA58CC2F288720830064205A /* AssignTaskSearchController.swift */,
+				FA21FA93288708F5005591D4 /* AddMemberProjectSearchController.swift */,
+			);
+			path = Workplace;
 			sourceTree = "<group>";
 		};
 		FAD4DBFA284F4BD500383C7A = {
@@ -327,30 +437,56 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FADB9AD5287DB72400F6C7E3 /* PostService.swift in Sources */,
 				FA3B111028588E0E00324C01 /* CustomTextField.swift in Sources */,
+				FA58CC30288720830064205A /* AssignTaskSearchController.swift in Sources */,
 				FA3B110E28588DFA00324C01 /* CustomButton.swift in Sources */,
+				FA21FA8C2886B683005591D4 /* TaskService.swift in Sources */,
+				FA21FA862886AE35005591D4 /* TaskUIView.swift in Sources */,
 				FA3B111A285896B800324C01 /* UserService.swift in Sources */,
+				FA36C20B287D630700FEF5A4 /* CustomTextView.swift in Sources */,
+				FAB024A02880836D001EF0ED /* Project.swift in Sources */,
 				FA3B11162858920700324C01 /* ImageUploader.swift in Sources */,
 				FA3B1101285792F500324C01 /* WorkplaceController.swift in Sources */,
+				FA492483286B58E400B67E9D /* PostController.swift in Sources */,
 				FA3B10FF285792B700324C01 /* ProfileController.swift in Sources */,
 				FA17E6152861BCE900E6E147 /* Constants.swift in Sources */,
+				FA21FA8E2886B6E8005591D4 /* TaskViewModel.swift in Sources */,
 				FA3B110928588C4600324C01 /* AuthenticationViewModel.swift in Sources */,
+				FA21FA882886AF83005591D4 /* TaskController.swift in Sources */,
+				FAB0249E2880719F001EF0ED /* ProjectUIView.swift in Sources */,
+				FADB9AD7287DDD7D00F6C7E3 /* Post.swift in Sources */,
 				FAD4DC0B284F4BD500383C7A /* ViewController.swift in Sources */,
+				FA21FA902886B974005591D4 /* Task.swift in Sources */,
 				FA3B11142858919700324C01 /* RegistrationController.swift in Sources */,
 				FA17E60F2861B98900E6E147 /* ProfileCell.swift in Sources */,
 				FAD4DC07284F4BD500383C7A /* AppDelegate.swift in Sources */,
 				FA3B11032857930100324C01 /* LoginController.swift in Sources */,
+				FAB024952880563C001EF0ED /* WorkplaceService.swift in Sources */,
+				FA2013892881C72700D01756 /* ProjectController.swift in Sources */,
 				FA17E61B2861C70400E6E147 /* UserCell.swift in Sources */,
+				FA21FA8A2886AF8D005591D4 /* AddTaskController.swift in Sources */,
+				FA21FA94288708F5005591D4 /* AddMemberProjectSearchController.swift in Sources */,
+				FAED684A28887E640036E4AE /* AttributedStringExtension.swift in Sources */,
+				FADB9AD9287DE41B00F6C7E3 /* PostViewModel.swift in Sources */,
+				FA36C209287D627900FEF5A4 /* UIViewControllerExtension.swift in Sources */,
 				FA17E60D2861AEA000E6E147 /* FeedCell.swift in Sources */,
 				FA17E61D2861C79E00E6E147 /* UserCellViewModel.swift in Sources */,
 				FA3B10FB2857929D00324C01 /* FeedController.swift in Sources */,
 				FA17E6112861B99600E6E147 /* ProfileHeader.swift in Sources */,
-				FA3B110C28588D4A00324C01 /* Extensions.swift in Sources */,
+				FA21FA822886A94A005591D4 /* TaskListController.swift in Sources */,
+				FAB02492288010E4001EF0ED /* WorkplaceCell.swift in Sources */,
+				FA3B110C28588D4A00324C01 /* UIViewExtension.swift in Sources */,
 				FA3B10FD285792A700324C01 /* MessController.swift in Sources */,
 				FA3B10F92857929100324C01 /* MainTabController.swift in Sources */,
+				FAB0249C28805C56001EF0ED /* ProjectViewModel.swift in Sources */,
+				FAB024A228808727001EF0ED /* StringExtensions.swift in Sources */,
+				FAB0249A28805914001EF0ED /* AddProjectController.swift in Sources */,
 				FA17E6192861C6A700E6E147 /* SearchController.swift in Sources */,
 				FA3B111228588E9600324C01 /* AuthService.swift in Sources */,
 				FA17E6132861BAA900E6E147 /* ProfileHeaderViewModel.swift in Sources */,
+				FA21FA842886AE26005591D4 /* TaskCell.swift in Sources */,
+				FA36C206287D622E00FEF5A4 /* UIButtonExtension.swift in Sources */,
 				FA3B110728588A1A00324C01 /* User.swift in Sources */,
 				FAD4DC09284F4BD500383C7A /* SceneDelegate.swift in Sources */,
 			);

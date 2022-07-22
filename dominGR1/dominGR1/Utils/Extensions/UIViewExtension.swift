@@ -10,45 +10,8 @@
 import UIKit
 
 
-extension UIViewController {
-    //static let hud = JGProgressHUD(style: .dark)
-    
-    func configureGradientLayer() {
-        let gradient = CAGradientLayer()
-        gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemOrange.cgColor]
-        gradient.locations = [0, 1]
-        view.layer.addSublayer(gradient)
-        gradient.frame = view.frame
-    }
-}
-//    func showLoader(_ show: Bool) {
-//        view.endEditing(true)
-//
-//        if show {
-//            UIViewController.hud.show(in: view)
-//        } else {
-//            UIViewController.hud.dismiss()
-//        }
-//    }
-//
-//    func showMessage(withTitle title: String, message: String) {
-//        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-//        present(alert, animated: true, completion: nil)
-//    }
-//}
-//
-extension UIButton {
-    func attributedTitle(firstPart: String, secondPart: String) {
-        let atts: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1, alpha: 0.87), .font: UIFont.systemFont(ofSize: 16)]
-        let attributedTitle = NSMutableAttributedString(string: "\(firstPart) ", attributes: atts)
-        
-        let boldAtts: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1, alpha: 0.87), .font: UIFont.boldSystemFont(ofSize: 16)]
-        attributedTitle.append(NSAttributedString(string: secondPart, attributes: boldAtts))
-        
-        setAttributedTitle(attributedTitle, for: .normal)
-    }
-}
+
+
 
 extension UIView {
     func anchor(top: NSLayoutYAxisAnchor? = nil,
@@ -136,5 +99,40 @@ extension UIView {
         guard let view = superview else { return }
         anchor(top: view.topAnchor, left: view.leftAnchor,
                bottom: view.bottomAnchor, right: view.rightAnchor)
+    }
+}
+
+extension UIView {
+    func gradientBorder(colors: [UIColor], isVertical: Bool){
+        self.layer.masksToBounds = true
+        
+        //Create gradient layer
+        let gradient = CAGradientLayer()
+        gradient.frame = CGRect(origin: CGPoint.zero, size: self.bounds.size)
+        gradient.colors = colors.map({ (color) -> CGColor in
+            color.cgColor
+        })
+
+        //Set gradient direction
+        if(isVertical){
+            gradient.startPoint = CGPoint(x: 0.5, y: 0)
+            gradient.endPoint = CGPoint(x: 0.5, y: 1)
+        }
+        else {
+            gradient.startPoint = CGPoint(x: 0, y: 0.5)
+            gradient.endPoint = CGPoint(x: 1, y: 0.5)
+        }
+
+        //Create shape layer
+        let shape = CAShapeLayer()
+        shape.lineWidth = 3
+        shape.path = UIBezierPath(roundedRect: gradient.frame.insetBy(dx: 1, dy: 1), cornerRadius: self.layer.cornerRadius).cgPath
+        shape.strokeColor = UIColor.black.cgColor
+        shape.fillColor = UIColor.clear.cgColor
+        gradient.mask = shape
+
+        //Add layer to view
+        self.layer.addSublayer(gradient)
+        gradient.zPosition = 0
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol AuthenticationDelegate: class {
+protocol AuthenticationDelegate: AnyObject {
     func authenticationDidComplete()
 }
 class LoginController: UIViewController {
@@ -24,12 +24,12 @@ class LoginController: UIViewController {
     }()
     
     private let emailTextField: UITextField = {
-        let tf = CustomTextField(placeholder: "Email")
+        let tf = CustomTextFieldAuthentication(placeholder: "Email")
         return tf
     }()
     
     private let passwordTextField: UITextField = {
-        let tf = CustomTextField(placeholder: "Password")
+        let tf = CustomTextFieldAuthentication(placeholder: "Password")
         tf.isSecureTextEntry = true
         return tf
     }()

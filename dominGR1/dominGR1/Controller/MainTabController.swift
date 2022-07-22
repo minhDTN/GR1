@@ -46,12 +46,13 @@ class MainTabController: UITabBarController {
           tabBar.backgroundColor = .systemGray5
           view.backgroundColor = .white
           
-        let freelayout =  UICollectionViewFlowLayout()
-          let feed = templateNavigationController(unselectedImage: UIImage(named: "home_unselected")!, selectedImage: UIImage(named: "home_selected")!, rootViewController: FeedController(collectionViewLayout: freelayout))
+          let feedlayout =  UICollectionViewFlowLayout()
+          let feed = templateNavigationController(unselectedImage: UIImage(named: "home_unselected")!, selectedImage: UIImage(named: "home_selected")!, rootViewController: FeedController(collectionViewLayout: feedlayout))
           
           let mess = templateNavigationController(unselectedImage: UIImage(named: "messenger_unselected")!, selectedImage: UIImage(named: "messenger_selected")!, rootViewController: MessController())
           
-          let workplace = templateNavigationController(unselectedImage: UIImage(named: "workplace_unselected")!, selectedImage: UIImage(named: "workplace_selected")!, rootViewController: WorkplaceController())
+          let workplacelayout =  UICollectionViewFlowLayout()
+          let workplace = templateNavigationController(unselectedImage: UIImage(named: "workplace_unselected")!, selectedImage: UIImage(named: "workplace_selected")!, rootViewController: WorkplaceController(collectionViewLayout: workplacelayout))
           
           let profile = templateNavigationController(unselectedImage: UIImage(named: "profile_unselected")!, selectedImage: UIImage(named: "profile_selected")!, rootViewController: ProfileController(user: user))
           
@@ -70,7 +71,36 @@ class MainTabController: UITabBarController {
 //MARK: - AuthenticationDelegate
 extension MainTabController: AuthenticationDelegate {
     func authenticationDidComplete() {
+        print("Authentication Complete")
         fetchUser()
         self.dismiss(animated: true, completion: nil)
+    }
+}
+extension MainTabController: ProfileControllerDelegate {
+    func updateProfileTab(user: User) {
+        print("Update Profile Tab")
+        viewControllers?.remove(at: 3)
+        let profile = templateNavigationController(unselectedImage: UIImage(named: "profile_unselected")!, selectedImage: UIImage(named: "profile_selected")!, rootViewController: ProfileController(user: user))
+        viewControllers?.append(profile)
+    }
+}
+extension MainTabController: DidFinishUploadingPostDelegate {
+    func updateFeedAfterUploadingPost() {
+        print("DEBUG: DidFinishUploadingPostDelegate start")
+        guard let feedNav = viewControllers?.first as? UINavigationController else { return }
+        guard let feed = feedNav.viewControllers.first as? FeedController else { return }
+        feed.handleRefresh()
+        self.dismiss(animated: true)
+    }
+}
+extension MainTabController: DidFinishAddingNewProjectDelegate {
+    
+    func didFinishAddingNewProject() {
+        print("DEBUG: DidFinishAddingNewProjectDelegate start")
+        selectedIndex = 1
+        guard let workplaceNav = viewControllers?[1] as? UINavigationController else { return }
+        guard let workplace = workplaceNav.viewControllers.first as? WorkplaceController else { return }
+        workplace.handleRefresh()
+        self.dismiss(animated: true)
     }
 }
